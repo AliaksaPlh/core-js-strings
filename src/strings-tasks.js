@@ -171,8 +171,11 @@ function removeFirstOccurrences(str, value) {
  *   removeLastOccurrences('I like legends', 'end') => 'I like legs'.
  *   removeLastOccurrences('ABABAB', 'BA') => 'ABAB'.
  */
-function removeLastOccurrences(/* str, value */) {
-  throw new Error('Not implemented');
+function removeLastOccurrences(str, value) {
+  const lastCharIndex = str.lastIndexOf(value);
+  return lastCharIndex >= 0
+    ? str.slice(0, lastCharIndex) + str.slice(lastCharIndex + value.length)
+    : str;
 }
 
 /**
@@ -240,8 +243,11 @@ function endsWith(str, substr) {
  *   formatTime(0, 45) => "00:45"
  *   formatTime(0, 0) => "00:00"
  */
-function formatTime(/* minutes, seconds */) {
-  throw new Error('Not implemented');
+function formatTime(minutes, seconds) {
+  const minutesForm = String(minutes).padStart(2, '0');
+  const secondsForm = String(seconds).padStart(2, '0');
+
+  return minutesForm + ':' + secondsForm;
 }
 
 /**
