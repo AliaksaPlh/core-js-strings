@@ -247,7 +247,7 @@ function formatTime(minutes, seconds) {
   const minutesForm = String(minutes).padStart(2, '0');
   const secondsForm = String(seconds).padStart(2, '0');
 
-  return minutesForm + ':' + secondsForm;
+  return `${minutesForm}:${secondsForm}`;
 }
 
 /**
